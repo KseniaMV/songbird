@@ -12,10 +12,15 @@
     height: 50%;
     margin: auto 0;
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .menu_item{
     width: 15%;
     height: auto;
+    margin: auto;
    
 }
 .menu_link{
@@ -25,4 +30,5 @@
     font-family: sans-serif;
     text-decoration: none;
     color: rgb(0,0,0);
+    cursor: pointer;
 }

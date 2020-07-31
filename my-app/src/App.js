@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css';
-import Header from './Header'
-import Menu from './Menu';
+import Header from './Header/Header.js'
+import Menu from './Menu/Menu.js';
 
 function App() {
   return (
     <div className="App">
      <Header />
      <Menu />
-     <Questions/>
-     <Answers/>
-     <Description/>
-     <Next/>
     </div>
   );
 }

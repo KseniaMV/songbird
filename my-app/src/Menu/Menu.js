@@ -1,8 +1,9 @@
 import React from 'react';
 import './Menu.css';
 
-class Menu extends Component {
-    return (props){
+class Menu extends React.Component{
+    render() {
+        return (
         <div className="nav">
             <ul className="nav_menu">
                 <li className="menu_item"><a className="menu_link">Разминка</a></li>
@@ -13,5 +14,8 @@ class Menu extends Component {
                 <li className="menu_item"><a className="menu_link">Морские птицы</a></li>
             </ul>
         </div>
+        )
     }
+    
 }
+export default Menu;
