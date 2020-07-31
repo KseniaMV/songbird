@@ -1,0 +1,20 @@
+.header{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+.logo{
+    width: 50%;
+    height: auto;
+    text-align:left;
+    margin: auto;
+}
+.score{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    text-align: right;
+}
