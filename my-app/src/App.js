@@ -5,7 +5,7 @@ import Menu from './Menu/Menu.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
      <Header />
      <Menu />
     </div>

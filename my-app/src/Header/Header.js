@@ -1,14 +1,18 @@
 import React from 'react';
 import './Header.css';
+import logo from '../images/images.png'
 
 
 class Header extends React.Component{
     render(){
         return(
            <div className="header">
-           <img className="logo" href="" alt="logo"/> 
-           <div className="score">11</div>
-        </div> 
+                <img className="logo" src={logo} alt="logo"></img>
+                <div className="score-conteiner">
+                    <p className="score-title">score:</p>
+                    <p className="score-count">11</p>
+                </div> 
+            </div>
         )
         
     }

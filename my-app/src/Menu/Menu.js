@@ -6,12 +6,12 @@ class Menu extends React.Component{
         return (
         <div className="nav">
             <ul className="nav_menu">
-                <li className="menu_item"><a className="menu_link">Разминка</a></li>
-                <li className="menu_item"><a className="menu_link">Воробьинные</a></li>
-                <li className="menu_item"><a className="menu_link">Лесные птицы</a></li>
-                <li className="menu_item"><a className="menu_link">Певчие птицы</a></li>
-                <li className="menu_item"><a className="menu_link">Хищные птицы</a></li>
-                <li className="menu_item"><a className="menu_link">Морские птицы</a></li>
+                <li className="menu_item">Разминка</li>
+                <li className="menu_item">Воробьинные</li>
+                <li className="menu_item">Лесные птицы</li>
+                <li className="menu_item">Певчие птицы</li>
+                <li className="menu_item">Хищные птицы</li>
+                <li className="menu_item">Морские птицы</li>
             </ul>
         </div>
         )

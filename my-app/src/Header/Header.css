@@ -1,21 +1,29 @@
 .header{
     width: 100vw;
-    height: 10vh;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;
+    background-color: rgb(255, 255, 255);
 }
 .logo{
-    width: 50%;
+    width: auto;
     height: auto;
-    text-align:left;
-    margin: auto;
-    background-color: black;
 }
-.score{
-    width: 50%;
+.score-conteiner{
+    width: calc(100% - 200px);
     height: auto;
     margin: auto;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center   
+}
+.score-title, .score-count{
+    width: 100px;
+    height: auto;
+    margin: auto 0;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
