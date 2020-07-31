@@ -1,0 +1,32 @@
+.question-conteiner{
+    width: 80%;
+    height: 30%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+.questions_image{
+    width: 30%;
+    height: 100%;
+    background-image: url("../../images/images.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.questions_audio-conteiner{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.audio_title{
+    width: 100%;
+    height: 30%;
+    font-size: 1.3 rem;
+    font-weight: lighter;
+}
