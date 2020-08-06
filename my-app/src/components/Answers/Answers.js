@@ -11,6 +11,7 @@ class Answers extends React.Component{
             <div className="answers-conteiner">
                 <AnswerList/>
                 <Description/>
+                <button className="button_next-level">Next level</button>
             </div>
         )
     }

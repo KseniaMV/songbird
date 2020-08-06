@@ -14,13 +14,7 @@ class BirdInfo extends React.Component{
                     </div>
                 </div>
                 <p className="bird_description">
-                    rfrjqnj ntrnfjgkfnfnkffnfnnvmkfnkn
-                    ffhghfjfjgndksndjddfvdf
-                    dfhksjdhfksjfsldnkjfnd
-                    jdhlfknk sssssssssssssssssfffffff
-                    ffffffffffffffffffffffffffffffffffff
-                    ffffffffffffffffffffffffffffffffffffffffffffffff
-                    fffffff
+                    
                 </p>
             </div>
         )
