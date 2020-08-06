@@ -1,14 +1,16 @@
 import React from 'react';
 import './Answers.css';
-import AnswersItem from './AnswersItem.js';
+import Description from './Description.js';
+import AnswerList from './AnswerList.js';
+
+
 
 class Answers extends React.Component{
     render(){
         return (
             <div className="answers-conteiner">
-                    <ul className="answers-list">
-                        <AnswersItem/> 
-                    </ul>
+                <AnswerList/>
+                <Description/>
             </div>
         )
     }

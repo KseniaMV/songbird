@@ -9,7 +9,7 @@ class Questions extends React.Component{
                 <div className="questions_image"></div>
                 <div className="questions_audio-conteiner">
                     <h3 className="audio_title">Name of Bird</h3>
-                    <audio className="audio_sound" controls>song of  birgs</audio>
+                    <audio className="audio_sound" controls>song of  birds</audio>
                 </div>
             </div>
         )

@@ -1,0 +1,26 @@
+.answers-item{
+    width: 90%;
+    height: 40px;
+    margin: 5px auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.answers-item:last-child{
+    border-bottom: none;
+}
+.answers-item_label{
+    width: calc(100% - 30px);
+    height: auto;
+    margin: auto;
+}
+.answers-item_input{
+    width: 30px;
+    margin: auto;
+}
+.answers-item_input:{
+    background-color: rgb(156, 2, 2);
+}
+

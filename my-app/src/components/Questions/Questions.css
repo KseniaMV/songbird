@@ -1,16 +1,18 @@
 .questions-conteiner{
     width: 80%;
-    height: 30%;
+    height: 20%;
     margin: auto;
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
+    background-color: rgb(141, 139, 139);
+    border-radius: 20px;
 }
 .questions_image{
-    width: 150px;
-    height: 150px;
-    margin: 20px;
+    min-width: 140px;
+    height: 90%;
     background-image: url("../../images/images.png");
     background-size: cover;
     background-position: center center;
@@ -18,27 +20,24 @@
     border-radius: 20px;
 }
 .questions_audio-conteiner{
-    width: 70%;
-    height: 150px;
-    margin: auto 0;
+    width: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
 }
 .audio_title{
-    width: 90%;
+    width: 80%;
     height: 20%;
     margin: auto;
     font-size: 1.4 rem;
-    text-align: center;
+    text-align: left;
     font-weight: lighter;
     color: rgba(255, 255, 255,.5);
     border-bottom: 1px solid rgba(255, 255, 255,.5);
 }
 .audio_sound{
-    width: 90%;
+    width: 80%;
     margin: auto;
 }

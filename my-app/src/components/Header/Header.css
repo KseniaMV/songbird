@@ -1,17 +1,17 @@
 .header{
-    width: 100vw;
-    height: auto;
+    width: 80%;
+    height: 20%;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content:center;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+     
 }
 .logo{
-    width: auto;
+    width: 200px;
     height: auto;
 }
 .score-conteiner{

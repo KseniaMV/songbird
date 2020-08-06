@@ -1,14 +1,35 @@
 import React from 'react';
-import './Answers.css';
+import './AnswersItem.css';
 
 class AnswersItem extends React.Component{
     render(){
         return (
-            <input className="answers-item"type="checkbox" value="blue"/>
-            <input className="answers-item"type="checkbox" value="blue"/>
-            <input className="answers-item"type="checkbox" value="blue"/>
-            <input className="answers-item"type="checkbox" value="blue"/>
-            <input className="answers-item"type="checkbox" value="blue"/>
+            <>
+            <div className="answers-item">
+                <input className="answers-item_input" type="radio" value="blue"/>
+                <label className="answers-item_label" htmlFor="">Орел</label>
+            </div>
+            <div className="answers-item">
+                <input className="answers-item_input" type="radio" value="blue"/>
+                <label className="answers-item_label" htmlFor="">Орел</label>
+            </div>
+            <div className="answers-item">
+                <input className="answers-item_input" type="radio" value="blue"/>
+                <label className="answers-item_label" htmlFor="">Орел</label>
+            </div>
+            <div className="answers-item">
+                <input className="answers-item_input" type="radio" value="blue"/>
+                <label className="answers-item_label" htmlFor="">Орел</label>
+            </div>
+            <div className="answers-item">
+                <input className="answers-item_input" type="radio" value="blue"/>
+                <label className="answers-item_label" htmlFor="">Орел</label>
+            </div>
+            <div className="answers-item">
+                <input className="answers-item_input" type="radio" value="blue"/>
+                <label className="answers-item_label" htmlFor="">Орел</label>
+            </div>
+            </>
         )
     }
 }
