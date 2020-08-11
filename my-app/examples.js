@@ -60,4 +60,35 @@ let response = await fetch('/article/fetch/post/user', {
   },
   body: JSON.stringify(user)
 });
+
+
+
+fetch('/myFile.json')
+  .then(response => {
+    return response.json()
+  }).then(data => {
+    this.setState({ levels: data.levels });
+  }).catch(ex => {
+    console.log('parsing failed', ex)
+  })
+
+  
+   return new Promise((resolve,reject)=>{
+            let request = new XMLHttpRequest();
+            request.open('post','../../birdsData.json');
+            request.send();
+            request.onload =function(){
+                let birds = request.response;
+                console.log(birds);
+            }
+
+            resolve();
+          
+
+        }).then((data)=>this.setState({
+            isLoaded: true,
+            items: data
+        })
+      
+        )
   */
