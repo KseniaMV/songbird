@@ -16,19 +16,19 @@
     align-items: center;
 }
 .bird_image{
-    min-width: 140px;
-    min-height: 120px;
+    display: block;
+    max-width: 120px;
+    max-height: 120px;
     margin: auto;
-    background-image: url("../../images/images.png");
+    /*
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    border-radius: 10px; 
-
+    border-radius: 10px; */
 }
-.bird_image--hidden{
+/*.bird_image--hidden{
     filter: invert(100%);
-}
+}*/
 .bird_audio-conteiner{
     width: 80%;
     height: auto;
@@ -39,15 +39,17 @@
     align-items: center;
  
 }
-.audio_title{
+.audio_title-default{
     width: 100%;
     height: 20%;
     margin: auto;
+    margin-bottom: 10px;
     font-size: 1.4 rem;
     text-align: left;
     font-weight: lighter;
     color: rgba(255, 255, 255,.5);
-    border-bottom: 1px solid rgba(255, 255, 255,.5);   
+    border-bottom: 1px solid rgba(255, 255, 255,.5); 
+    /*display: none; */ 
 }
 .audio_sound{
     width: 100%;
@@ -72,7 +74,7 @@
     font-weight: lighter;
     color: rgba(255, 255, 255,.5);
     border-bottom: 1px solid rgba(255, 255, 255,.5);
-    /*display: none;*/
+    display: none;
 }
 
 

@@ -12,7 +12,9 @@ class Questions extends React.Component{
         this.state = {
             error: null,
             isLoaded: false,
-            items: []
+            items: [],
+            itemName: "",
+            image: ""
         };
     }
  
@@ -22,19 +24,19 @@ class Questions extends React.Component{
         let bird = warmUp[randomCount];
         this.setState({ 
             isLoaded: true,
-            items: bird
-          
+            items: bird,
+            itemName: bird.name,
+            image: bird.image
+
         })
-        console.log(randomCount);
-        console.log(bird);
-        console.log(warmUp);
+        console.log(bird.name)
     }
 
         
     render(){
         return(
             <div className="questions-conteiner">
-                <BirdInfo species={this.state.items.species} audio={this.state.items.audio} />                
+                <BirdInfo name={this.state.items.name} audio={this.state.items.audio} image={this.state.items.image}/>                
             </div>
     
         )
