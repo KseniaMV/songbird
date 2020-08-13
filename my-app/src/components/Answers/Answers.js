@@ -4,17 +4,17 @@ import Description from './Description.js';
 import AnswerList from './AnswerList.js';
 import birdsData from '../../birdsData.json';
 
-
-
 class Answers extends React.Component{
     constructor(props){
        super(props);
        this.state = {
+           isRightAnswer: false,
            isLoaded: false,
-           birdsList: []
+           birdsList: [],
+           category: "Разминка"
        }
     }
-    componentDidMount(){
+    /*componentDidMount(){
         let listOfBird = birdsData.Разминка;
         listOfBird.forEach(element => {
             console.log(element.name);
@@ -29,14 +29,13 @@ class Answers extends React.Component{
         console.log(this.state.birdsList);
   
       
-    }
+    }*/
 
     render(){
         return (
             <div className="answers-conteiner">
                 <AnswerList name={this.state.birdsList}/>
                 <Description/>
-                <button className="button_next-level">Next level</button>
             </div>
         )
     }

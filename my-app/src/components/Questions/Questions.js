@@ -1,10 +1,7 @@
 import React from 'react';
 import './Questions.css';
 import BirdInfo from './BirdInfo.js';
-import birdsData from '../../birdsData.json';
-
-
-
+import defaultImage from '../../images/images.png';
 
 class Questions extends React.Component{
     constructor(props){
@@ -12,31 +9,36 @@ class Questions extends React.Component{
         this.state = {
             error: null,
             isLoaded: false,
-            items: [],
-            itemName: "",
-            image: ""
+            name: '',
+            image: '',
+            audio: '',
+            species: ''
         };
     }
- 
-    componentDidMount(){
-        let warmUp = birdsData.Разминка;
-        let randomCount = Math.floor(Math.random() * warmUp.length);
-        let bird = warmUp[randomCount];
+    componentDidMount() {
+        let currentBird = this.props.currentBird;
+        console.log("name " + currentBird.name)
         this.setState({ 
             isLoaded: true,
-            items: bird,
-            itemName: bird.name,
-            image: bird.image
+            name: currentBird.name,
+            audio: currentBird.audio,
+            species: currentBird.species
 
         })
-        console.log(bird.name)
+        if(this.props.isRightAnswer === false){
+            this.setState({
+                image: defaultImage
+            })
+        }else{
+            this.setState({image: currentBird.image});
+        }
+   
     }
-
-        
+    
     render(){
         return(
             <div className="questions-conteiner">
-                <BirdInfo name={this.state.items.name} audio={this.state.items.audio} image={this.state.items.image}/>                
+                <BirdInfo name={this.state.name} audio={this.state.audio} image={this.state.image}/>                
             </div>
     
         )

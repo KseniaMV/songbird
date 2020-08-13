@@ -1,8 +1,5 @@
 import React from 'react';
 import './Description.css';
-import BirdInfo from '../Questions/BirdInfo.js';
-
-
 
 class Description extends React.Component{
     render(){

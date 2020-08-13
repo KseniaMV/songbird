@@ -17,18 +17,12 @@
 }
 .bird_image{
     display: block;
-    max-width: 120px;
-    max-height: 120px;
+    width: 100px;
+    height: 100px;
     margin: auto;
-    /*
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-radius: 10px; */
+    border-radius: 10px; 
 }
-/*.bird_image--hidden{
-    filter: invert(100%);
-}*/
+    
 .bird_audio-conteiner{
     width: 80%;
     height: auto;

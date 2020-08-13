@@ -35,3 +35,6 @@
     color: rgb(0,0,0);
     cursor: pointer;
 }
+.selected-category {
+    background-color: rgb(83, 5, 5);
+}
