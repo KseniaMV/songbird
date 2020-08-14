@@ -14,25 +14,29 @@ class Questions extends React.Component{
             isRightAnswer: ''
         };
     }
+
+
     componentDidMount() {
-        let currentBird = this.props.currentBird;
+        let currentBird = this.props.createQuestion();
         this.setState({ 
             isLoaded: true,
             name: currentBird.name,
             audio: currentBird.audio,
             species: currentBird.species,
         });
-        if(this.props.isRightAnswer === false){
-            this.setState({
-                image: defaultImage
-            })
-        }else{
+        if(this.props.isRightAnswer === true){
             this.setState({
                 image: currentBird.image
             })
         }
+        this.props.getCurrentBird(this.state.name);
+
+
     }
-    
+
+
+
+
     render(){
         return(
             <div className="questions-conteiner">

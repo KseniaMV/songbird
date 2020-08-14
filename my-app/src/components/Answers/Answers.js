@@ -14,22 +14,10 @@ class Answers extends React.Component{
            category: "Разминка"
        }
     }
-
-    getListOfNames(){
-        let listOfNames = this.props.answersList;
-        return listOfNames;
-    }
-
-    handleClick = (e)=>{
-        let targetName = e.target.value;
-        targetName.className += ""
-
-    }
-
     render(){
         return (
             <div className="answers-conteiner">
-                <AnswerList listOfNames={this.getListOfNames()} handleClick={this.handleClick}/>
+                <AnswerList listOfNames={this.props.getAnswersList} handleClick={this.props.handleClick}/>
                 <Description/>
             </div>
         )

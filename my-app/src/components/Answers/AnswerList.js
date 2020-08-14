@@ -14,7 +14,7 @@ class AnswerList extends React.Component{
         let listOfNames = this.props.listOfNames;
         let array = listOfNames.map(name => {
             return(
-                     <AnswersItem key={name} name={name}/>
+                     <AnswersItem key={name} name={name} handleClick={this.props.handleClick}/>
             )  
         })
 
