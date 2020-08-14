@@ -6,7 +6,7 @@ class AnswersItem extends React.Component{
         return (
             <>
             <div className="answers-item">
-                <input className="answers-item_input" type="radio" value="blue"/>
+                <input className="answers-item_input" type="radio" name="bird" value={this.props.name}/>
                 <label className="answers-item_label" htmlFor="">{this.props.name}</label>
             </div>
             </>

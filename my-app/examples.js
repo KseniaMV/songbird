@@ -92,3 +92,111 @@ fetch('/myFile.json')
       
         )
   */
+
+
+  ////////////88888888888888///////////
+
+ /* const dataBirds = birdsData;
+class Game extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            isRightAnswer: false,
+            category: "Разминка",
+            count: 0
+        }
+     }
+
+     //получение текущей  категории вопроса
+     setQuestionCategory =(categoryCount)=>{
+        switch(categoryCount) {
+            case 1: 
+            this.setState({category: "Воробьиные"});
+            break
+            case 2: 
+            this.setState({category: "Лесные"});
+            break
+            case 3: 
+            this.setState({category: "Певчие птицы"});
+            break 
+            case 4: 
+            this.setState({category: "Хищные птицы"});
+            break 
+            case 5: 
+            this.setState({category: "Морские птицы"});
+            break
+            default: 
+            this.setState({category: "Разминка"});
+        }
+       
+     }
+
+     //случайная птица из текущей категории для вопроса
+     getCurrentBird = ()=>{
+         let randomCount = Math.floor(Math.random() * 6);
+         let category = this.getQuestionCategoryName();
+         let currentBird = dataBirds[category][randomCount];
+         let currentBirdData = {
+             name: currentBird.name,
+             audio: currentBird.audio,
+             species: currentBird.species,
+             image: currentBird.image,
+             description: currentBird.description
+         }
+         return currentBirdData;
+         
+     }
+
+
+  handleClick = (e)=>{
+        let categoryCount = this.state.count;
+        categoryCount ++;
+        this.setQuestionCategory(categoryCount);
+            this.setState(()=>{
+                return{
+                  count: categoryCount,
+                  isRightAnswer: true
+                }
+            });  
+            if(categoryCount === 5){
+                this.setState(() => {
+                    return {count:0}
+                }); 
+            } 
+            console.log(this.state.category)
+   
+    }
+
+    getQuestionCategoryName = () =>{
+        let questionCategoryName = this.state.category;
+        return questionCategoryName;    
+    }
+
+    getQuestionCategoryCount = () =>{
+        let currentCategory = this.state.count;
+        return currentCategory;
+    } 
+
+    getRightAnswer = () =>{
+        let rightAnswer = this.state.isRightAnswer;
+        console.log(rightAnswer)
+        return rightAnswer;
+    }  
+
+
+  
+    
+    render(){
+        const {isRightAnswer, category, count} = this.state;
+        return (
+                <div className="app">
+                 <Header />
+                 <Menu count={count}/>
+                 <Questions currentBird={this.getCurrentBird()} isRightAnswer={isRightAnswer} category={category}/>
+                 <Answers/>
+                 <NextButton handleClick={this.handleClick}/>
+                </div>
+        )
+    }
+}
+export default Game;*/

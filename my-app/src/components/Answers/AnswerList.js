@@ -6,26 +6,21 @@ class AnswerList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            answerList: this.props.name,
-            variants: [] 
         }
     }
-   componentDidMount(){
-        console.log(this.state.answerList)
-        let answerItem = this.state.answerList.map((key, name)=>{
-           return(
-               <AnswersItem name={name}/>
-           )
-        })
-        console.log(answerItem)
-     
-    }
+   
  
-    render(answerItem){
+    render(){
+        let listOfNames = this.props.listOfNames;
+        let array = listOfNames.map(name => {
+            return(
+                     <AnswersItem key={name} name={name}/>
+            )  
+        })
+
         return (
             <form className="answer-list">
-                {answerItem}
- 
+                {array}
             </form>
         )
 
@@ -33,14 +28,3 @@ class AnswerList extends React.Component{
 }
 
 export default AnswerList;
-
-
-/*this.items = this.state.cart.map((item, key) =>
-   
-{item.name}
-
-  const articleElements = articles.map(article =>
-      <li><Article article = {article}/></li>
-     )
-
-);*/

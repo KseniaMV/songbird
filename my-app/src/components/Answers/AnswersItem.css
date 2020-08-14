@@ -20,7 +20,11 @@
     width: 30px;
     margin: auto;
 }
-.answers-item_input:{
-    background-color: rgb(156, 2, 2);
+
+.selected-true{
+    background-color: rgb(3, 110, 17);
+}
+.selected-false{
+    border: 2px solid rgb(110, 3, 8);
 }
 

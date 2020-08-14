@@ -2,28 +2,12 @@ import React from 'react';
 import './Menu.css';
 
 class Menu extends React.Component{
-    constructor(props) {
+   constructor(props) {
         super(props);
-        this.state={
-            isSelected: false
-            
-        };   
-    }
-
-componentDidMount() {
-    let selectedCategory = this.props.currentCategory;
-    console.log("selectedCategoty" + selectedCategory);
-    let questionCategory = document.querySelectorAll('.menu_item');
-    console.log(questionCategory)
-       questionCategory.forEach((category, index) => {
-           if(selectedCategory === index){
-               category.className += "selected-category";
-           }
-    });
-}
+        this.state={   
+        }; 
      
-
-    
+    }
 
     render() {
         return (
@@ -41,4 +25,5 @@ componentDidMount() {
     }
     
 }
+
 export default Menu;

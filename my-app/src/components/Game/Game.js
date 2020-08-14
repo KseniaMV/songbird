@@ -17,74 +17,40 @@ class Game extends React.Component{
         }
      }
 
-     //получение текущей  категории вопросов
-     getQuestionCategoryName = () =>{
-         let questionCategoryName = this.state.category;
-         return questionCategoryName;    
-     }
-     getQuestionCategoryCount = () =>{
-         let questionCategoryCount = this.state.count;
-         return questionCategoryCount;
-     }   
-
-     setQuestionCategory =(categoryCount)=>{
-        switch(categoryCount) {
-            case 1: 
-            this.setState({category: "Воробьиные"});
-            break
-            case 2: 
-            this.setState({category: "Лесные"});
-            break
-            case 3: 
-            this.setState({category: "Певчие птицы"});
-            break 
-            case 4: 
-            this.setState({category: "Хищные птицы"});
-            break 
-            case 5: 
-            this.setState({category: "Морские птицы"});
-            break
-            default: 
-            this.setState({category: "Разминка"});
-        }
-        console.log("Текущая категория " + this.state.category);
-       
-     }
-
-     //случайная птица из текущей категории для вопроса
      getCurrentBird = ()=>{
-         let randomCount = Math.floor(Math.random() * 6);
-         let category = this.getQuestionCategoryName();
-         let currentBird = dataBirds[category][randomCount];
-         let currentBirdData = {
-             name: currentBird.name,
-             audio: currentBird.audio,
-             species: currentBird.species,
-             image: currentBird.image,
-             description: currentBird.description
-         }
-         return currentBirdData;
-         
-     }
-
-
-    toNextCategory = ()=>{
-        let categoryCount = this.state.count;
-        categoryCount ++;
-        this.setQuestionCategory(categoryCount);
-            this.setState(() => {
-              return {count:categoryCount}
-            });    
+        let randomCount = Math.floor(Math.random() * 6);
+        let category = this.state.category;
+        let currentBird = dataBirds[category][randomCount];
+        let currentBirdData = {
+            name: currentBird.name,
+            audio: currentBird.audio,
+            species: currentBird.species,
+            image: currentBird.image,
+            description: currentBird.description
+        }
+        return currentBirdData;
     }
 
+    getAnswersList() {
+        let category = this.state.category;
+        let answersList = dataBirds[category].map((value,index)=>{
+            return value.name
+        }
+        );
+        console.log(answersList);
+        return answersList;
+    }
+  
+    
     render(){
+        const {isRightAnswer, category, count} = this.state;
         return (
                 <div className="app">
-                 <Header />
-                 <Menu currentCategory={()=>this.state.count}/>
-                 <Questions currentBird={this.getCurrentBird()} isRightAnswer={this.state.isRightAnswer}/>
-                 <Answers/>
-                 <NextButton toNextCategory={this.toNextCategory}/>
+                 <Header/>
+                 <Menu/>
+                 <Questions currentBird={this.getCurrentBird()} isRightAnswer={isRightAnswer}/>
+                 <Answers answersList={this.getAnswersList()} category={this.state.category}/>
+                 <NextButton/>
                 </div>
         )
     }

@@ -14,27 +14,22 @@ class Answers extends React.Component{
            category: "Разминка"
        }
     }
-    /*componentDidMount(){
-        let listOfBird = birdsData.Разминка;
-        listOfBird.forEach(element => {
-            console.log(element.name);
-            let birdName = element.name;
-            this.setState({
-                isLoaded: true,
-                birdsList: this.state.birdsList.push(birdName)
-            })
-          
-            
-        });
-        console.log(this.state.birdsList);
-  
-      
-    }*/
+
+    getListOfNames(){
+        let listOfNames = this.props.answersList;
+        return listOfNames;
+    }
+
+    handleClick = (e)=>{
+        let targetName = e.target.value;
+        targetName.className += ""
+
+    }
 
     render(){
         return (
             <div className="answers-conteiner">
-                <AnswerList name={this.state.birdsList}/>
+                <AnswerList listOfNames={this.getListOfNames()} handleClick={this.handleClick}/>
                 <Description/>
             </div>
         )
