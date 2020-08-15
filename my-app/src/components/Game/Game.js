@@ -15,9 +15,16 @@ class Game extends React.Component{
             category: "Разминка",
             count: 0,
             answer: "",
-            currentBird: this.getCurrentBird(),
-            score: 0
+            currentBird: "",
+            score: 0,
+            bird: {},
+            answerList: []
         }
+     }
+
+     componentDidMount(){
+         this.createQuestion();
+         this.getAnswersList();
      }
 
      //создание полей для компонента Question
@@ -32,6 +39,10 @@ class Game extends React.Component{
             image: currentBird.image,
             description: currentBird.description
         }
+        this.setState({
+            currentBird: currentBird.name,
+            bird: currentBirdData
+        })
         return currentBirdData;
     };
     
@@ -48,6 +59,9 @@ class Game extends React.Component{
         let answersList = dataBirds[category].map((value,index)=>{
             return value.name
         });
+        this.setState({
+            answerList: answersList
+        })
         return answersList;
     }
   
@@ -88,8 +102,8 @@ class Game extends React.Component{
                 <div className="app">
                  <Header score ={this.state.score}/>
                  <Menu/>
-                 <Questions createQuestion={this.createQuestion} getCurrentBird={this.getCurrentBird} isRightAnswer={this.state.isRightAnswer}/>
-                 <Answers getAnswersList={this.getAnswersList()} category={this.state.category} handleClick={this.handleClick}/>
+                 <Questions createQuestion={this.state.bird} getCurrentBird={this.getCurrentBird} isRightAnswer={this.state.isRightAnswer}/>
+                 <Answers getAnswersList={this.state.answerList} handleClick={this.handleClick}/>
                  <NextButton/>
                 </div>
         )
