@@ -11,14 +11,15 @@ class Game extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            isRightAnswer: true,
+            isRightAnswer: false,
             category: "Разминка",
             count: 0,
             answer: "",
             currentBird: "",
             score: 0,
             bird: {},
-            answerList: []
+            answerList: [],
+            clickCount: 0
         }
      }
 
@@ -67,43 +68,70 @@ class Game extends React.Component{
   
     //обработка события click по варианту ответа
     handleClick = (value)=>{
-        let answer = value.target.value;
-        this.setState(()=>{
-            return({
-                answer: answer
-            })
-        });
-        this.checkAnswer();
+        return new Promise((resolve, reject)=>{      
+            let selectedValue = value.target.value;
+            let click = this.state.clickCount;
+            this.setState(()=>{
+                return({
+                    answer: selectedValue,
+                    clickCount: click + 1
+                })
+            });
+            resolve(selectedValue);
+
+            }).then(()=>this.checkAnswer());
     }
 
     //функция сравнения ответа с вопросом
-    checkAnswer(){
+    checkAnswer = ()=>{
         let answer = this.state.answer;
+        let prevScore = this.state.score;
         let currentBird = this.state.currentBird;
+        console.log(answer + " / " + currentBird);
         if(answer === currentBird){
+            this.scoreCount(prevScore);
             this.setState(()=>{
-                return(
-                    {score: this.score + 1}
-                )
-
-            })
-      
-            
+                return({isRightAnswer: true})
+            })   
         }
-        console.log(answer + "/" + currentBird);
+
+
     }
 
+    //подсчет очков
+    scoreCount = (prevScore)=>{
+        let answerCount = 6;
+        let clickCount = this.state.clickCount;
+        let finalScore = answerCount - clickCount;
+        this.setState(()=>{
+            return ({score: prevScore + finalScore})
+        })
+    }
 
+    //получить количество очков
+    getScore = ()=>{
+        let score = this.state.score;
+        return score;
+    }
 
-    
+    //получить данные о текущей категории 
+    getCategoryData=()=>{
+       let categoryData = {
+           name: this.state.category,
+           title: Object.keys(dataBirds)
+       }
+       console.log(categoryData); 
+       return categoryData;
+    }
+
     render(){
 
         return (
                 <div className="app">
-                 <Header score ={this.state.score}/>
-                 <Menu/>
+                 <Header score ={this.getScore}/>
+                 <Menu categoryData={this.getCategoryData}/>
                  <Questions createQuestion={this.state.bird} getCurrentBird={this.getCurrentBird} isRightAnswer={this.state.isRightAnswer}/>
-                 <Answers getAnswersList={this.state.answerList} handleClick={this.handleClick}/>
+                 <Answers getAnswersList={this.state.answerList} handleClick={this.handleClick} isRightAnswer={this.state.isRightAnswer}/>
                  <NextButton/>
                 </div>
         )

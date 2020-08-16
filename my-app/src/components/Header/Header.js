@@ -5,12 +5,13 @@ import logo from '../../images/images.png'
 
 class Header extends React.Component{
     render(){
+        let score = this.props.score();
         return(
            <div className="header">
                 <img className="logo" src={logo} alt="logo"></img>
                 <div className="score-conteiner">
                     <p className="score-title">score:</p>
-                    <p className="score-count">{this.props.score}</p>
+                    <p className="score-count">{score}</p>
                 </div> 
             </div>
         )

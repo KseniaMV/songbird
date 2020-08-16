@@ -10,15 +10,14 @@ class Menu extends React.Component{
     }
 
     render() {
+        let categoryData = this.props.categoryData();
+        let menuItems = categoryData.title.map(item =>{
+            return <li key={item} className={item === categoryData.name ? "menu_item selected-category": "menu_item"}>{item}</li> 
+        });
         return (
         <div className="nav">
             <ul className="nav_menu">
-                <li className="menu_item">Разминка</li>
-                <li className="menu_item">Воробьиные</li>
-                <li className="menu_item">Лесные птицы</li>
-                <li className="menu_item">Певчие птицы</li>
-                <li className="menu_item">Хищные птицы</li>
-                <li className="menu_item">Морские птицы</li>
+                {menuItems}
             </ul>
         </div>
         )
@@ -27,3 +26,5 @@ class Menu extends React.Component{
 }
 
 export default Menu;
+
+
