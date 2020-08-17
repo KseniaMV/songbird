@@ -14,7 +14,7 @@ class Answers extends React.Component{
         return (
             <div className="answers-conteiner">
                 <AnswerList listOfNames={this.props.getAnswersList} handleClick={this.props.handleClick}  isRightAnswer={this.props.isRightAnswer}/>
-                <Description/>
+                <Description createDescription={this.props.createDescription}/>
             </div>
         )
     }

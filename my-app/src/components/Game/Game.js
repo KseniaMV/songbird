@@ -16,6 +16,7 @@ class Game extends React.Component{
             count: 0,
             answer: "",
             currentBird: "",
+            id:'',
             score: 0,
             bird: {},
             answerList: [],
@@ -70,11 +71,13 @@ class Game extends React.Component{
     handleClick = (value)=>{
         return new Promise((resolve, reject)=>{      
             let selectedValue = value.target.value;
+            let id = value.target.id;
             let click = this.state.clickCount;
             this.setState(()=>{
                 return({
                     answer: selectedValue,
-                    clickCount: click + 1
+                    clickCount: click + 1,
+                    id: id
                 })
             });
             resolve(selectedValue);
@@ -84,27 +87,25 @@ class Game extends React.Component{
 
     //функция сравнения ответа с вопросом
     checkAnswer = ()=>{
-        let answer = this.state.answer;
-        let prevScore = this.state.score;
-        let currentBird = this.state.currentBird;
-        console.log(answer + " / " + currentBird);
-        if(answer === currentBird){
-            this.scoreCount(prevScore);
+        let answer = this.state.answer;             //получение навзания птицы, который выбрал пользователь
+        let prevScore = this.state.score;           //получение количества очков пользователя
+        let currentBird = this.state.currentBird;   //название птицы, которую "загадала" игра 
+        if(answer === currentBird){                 //сравнение варианта ответа и загаданной птицы
+            this.scoreCount(prevScore);             //если названия равны, то вызывается функция подсчета очков, куда передается текущее количество очков пользователя
             this.setState(()=>{
-                return({isRightAnswer: true})
+                return({isRightAnswer: true})       //флаг = ответ правильный
             })   
         }
-
 
     }
 
     //подсчет очков
     scoreCount = (prevScore)=>{
-        let answerCount = 6;
-        let clickCount = this.state.clickCount;
-        let finalScore = answerCount - clickCount;
+        let answerCount = 6;                        //максимальное количество попыток  
+        let clickCount = this.state.clickCount;     //количество попыток (сlick по вариантам ответов)
+        let finalScore = answerCount - clickCount;  //подсчет очков в зависимости от количества уже использованных попыток 6 = 0
         this.setState(()=>{
-            return ({score: prevScore + finalScore})
+            return ({score: prevScore + finalScore}) //запись в state полученных за правильный ответ очков
         })
     }
 
@@ -117,21 +118,28 @@ class Game extends React.Component{
     //получить данные о текущей категории 
     getCategoryData=()=>{
        let categoryData = {
-           name: this.state.category,
+           name: this.state.category,           //информация о названии категории вопросов и массив со всеми наваниями категорий
            title: Object.keys(dataBirds)
-       }
-       console.log(categoryData); 
+       } 
        return categoryData;
     }
 
-    render(){
+    createDescription=()=>{  
+        let id = this.state.id;      //получение названия выбранной пользователем птицы
+        let category = this.state.category;     //получение категории вопросов
+        let bird = dataBirds[category][id]; //доступ к данным птицы в выбранной категории
+        return bird;
+    }
 
+
+
+    render(){
         return (
                 <div className="app">
                  <Header score ={this.getScore}/>
                  <Menu categoryData={this.getCategoryData}/>
                  <Questions createQuestion={this.state.bird} getCurrentBird={this.getCurrentBird} isRightAnswer={this.state.isRightAnswer}/>
-                 <Answers getAnswersList={this.state.answerList} handleClick={this.handleClick} isRightAnswer={this.state.isRightAnswer}/>
+                 <Answers getAnswersList={this.state.answerList} handleClick={this.handleClick} isRightAnswer={this.state.isRightAnswer} createDescription={this.createDescription}/>
                  <NextButton/>
                 </div>
         )

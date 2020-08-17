@@ -12,9 +12,9 @@ class AnswerList extends React.Component{
  
     render(){
         let listOfNames = this.props.listOfNames;
-        let array = listOfNames.map(name => {
+        let array = listOfNames.map((name, index) => {
             return(
-                     <AnswersItem key={name} name={name} handleClick={this.props.handleClick} isRightAnswer={this.props.isRightAnswer}/>
+                     <AnswersItem id={index} key={name} name={name} handleClick={this.props.handleClick} isRightAnswer={this.props.isRightAnswer}/>
             )  
         })
 

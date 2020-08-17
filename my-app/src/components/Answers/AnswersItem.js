@@ -7,7 +7,7 @@ class AnswersItem extends React.Component{
         return (
             <>
             <div className="answers-item">
-                <input className={rightAnswerState===true? "answers-item_input selected-true" : "answers-item_input selected-false"} type="radio" name="bird" value={this.props.name} onClick={this.props.handleClick}/>
+                <input id={this.props.id} className={rightAnswerState===true? "answers-item_input selected-true" : "answers-item_input selected-false"} type="radio" name="bird" value={this.props.name} onClick={this.props.handleClick}/>
                 <label className="answers-item_label" htmlFor="">{this.props.name}</label>
             </div>
             </>
