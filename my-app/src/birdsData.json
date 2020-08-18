@@ -13,7 +13,7 @@
       "name": "Журавль",
       "species": "Grus grus",
       "description": "Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».",
-      "image": "https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg",
+      "image": "https://simple-fauna.ru/wp-content/uploads/2018/12/zhuravli_1.jpg",
       "audio": "https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3"
     },
     {
@@ -28,6 +28,7 @@
       "id": 4,
       "name": "Козодой",
       "species": "Caprimulgus europaeus",
+      "image": "https://simple-fauna.ru/wp-content/uploads/2019/05/kozodoj-2.jpg",
       "description": "Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются.",
       "audio": "https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3"
     },
