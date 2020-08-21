@@ -11,14 +11,63 @@
 .answers-item:last-child{
     border-bottom: none;
 }
-.answers-item_label{
+.answers-item_label, .answers-item_label--selected-true, .answers-item_label--selected-false{
     width: calc(100% - 30px);
     height: auto;
     margin: auto;
+    position: relative;
 }
 .answers-item_input{
     width: 30px;
     margin: auto;
+    border: 1px solid red;
+    z-index: 0;
+    position: relative;
+    visibility: hidden;  
+}
+
+.answers-item_label::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: beige;
+    position: absolute;
+    top: calc(50% - 5px);
+    left: -20px;
+    z-index: 1;
+    
+}
+.answers-item_label--selected-true::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgba(5, 199, 80, 0.6);
+    position: absolute;
+    top: calc(50% - 5px);
+    left: -20px;
+    z-index: 1;
+    
+}
+.answers-item_label--selected-false::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgba(219, 4, 94, 0.6);
+    position: absolute;
+    top: calc(50% - 5px);
+    left: -20px;
+    z-index: 1;
+    
+}
+
+.answers-item_label:hover::before{
+    background-color: rgba(19, 196, 209, 0.6);
 }
 
 .selected-true{

@@ -17,16 +17,16 @@ class Questions extends React.Component{
 
 
     render(){
-        let rightAnswerSate = this.props.isRightAnswer;
+        let rightAnswerState = this.props.isRightAnswer;
         let image;
-        if(rightAnswerSate === false){
+        if(rightAnswerState === false){
             image = defaultImage;
         }else{
             image = this.props.createQuestion.image;
         }
         return(
             <div className="questions-conteiner">
-                <BirdInfo name={this.props.createQuestion.name} audio={this.props.createQuestion.audio} image={image}/>                
+                <BirdInfo name={this.props.createQuestion.name} audio={this.props.createQuestion.audio} image={image} species={this.props.createQuestion.species} isRightAnswer={rightAnswerState === true? true:false}/>                
             </div>
     
         )

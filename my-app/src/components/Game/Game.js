@@ -41,78 +41,76 @@ class Game extends React.Component{
             image: currentBird.image,
             description: currentBird.description
         }
-        this.setState({                                     //запись в state загаданной птицы и ее данных
-            currentBird: currentBird.name,
-            bird: currentBirdData
+        this.setState(()=>{
+            return(
+                {
+                    currentBird: currentBird.name,
+                    bird: currentBirdData
+                }
+            )                                     //запись в state загаданной птицы и ее данных
+            
         })
         return currentBirdData;
     };
+        
     
-    //получение правильного ответа на вопрос
-    getCurrentBird(value){
-        let currentBird = value;
-        return currentBird
+    //создание описания птицы
+        createDescription=()=>{                         
+            let id = this.state.id;                     //получение названия выбранной пользователем птицы
+            let category = this.state.category;         //получение категории вопросов
+            let bird = dataBirds[category][id];         //доступ к данным птицы в выбранной категории
+            return bird;
+        };
     
-    };
-
-    //получение названий птиц для списка ответов в компоненте Answers
-    getAnswersList() {
-        let category = this.state.category;                         //получение текущей категории вопросов
-        let answersList = dataBirds[category].map((value,index)=>{  //формирование списка названий птиц из текущей категории вопросов
-            return value.name
-        });
-        this.setState({
-            answerList: answersList                                 //запись списка в state
-        })
-        return answersList;
-    };
-  
-    //обработка события click по варианту ответа
-    handleClick = (value)=>{
-        return new Promise((resolve, reject)=>{      
-            let selectedValue = value.target.value;     //значение input которое выбрал пользователь
-            let id = value.target.id;                   //id выбранного input
-            let click = this.state.clickCount;          //текущее значение количества кликов пользователя
-            this.setState(()=>{
-                return({
-                    answer: selectedValue,              //выбранное значение запивывается в state  как овтет пользователя
-                    clickCount: click + 1,              //количество кликов пользователя увеличивается на 1
-                    id: id
-                })
-            });
-            resolve(selectedValue);
-            }).then(()=>this.checkAnswer());
-    };
 
     //функция сравнения ответа с вопросом
     checkAnswer = ()=>{
         let answer = this.state.answer;             //получение навзания птицы, который выбрал пользователь
         let prevScore = this.state.score;           //получение количества очков пользователя
         let currentBird = this.state.currentBird;   //название птицы, которую "загадала" игра 
-        if(answer === currentBird){                 //сравнение варианта ответа и загаданной птицы
-            this.scoreCount(prevScore);             //если названия равны, то вызывается функция подсчета очков, куда передается текущее количество очков пользователя
+        if(answer === currentBird && this.state.isRightAnswer === false){//сравнение варианта ответа и загаданной птицы
+            let labelId = this.state.id;
+            let label = document.querySelector("#"+"bird" + labelId);
+                label.classList.remove("answers-item_label");
+                label.classList.add("answers-item_label--selected-true");
+            this.scoreCount(prevScore);             //если названия равны, то вызывается функция подсчета очков, куда передается текущее количество очков пользователя    
             this.setState((state)=>{
                 return({
                     isRightAnswer: true,            //флаг = ответ правильный
-                    count: state.count + 1
+                    count: state.count + 1, 
                 })      
-            }); 
-        };
+            });
+        }
 
     };
+
+    changeInputColor = ()=>{
+        let labelId = this.state.id;
+        let label = document.querySelector("#"+"bird" + labelId);
+        if(!label.classList.contains("answers-item_label--selected-true")){
+            label.classList.remove("answers-item_label");
+            label.classList.add("answers-item_label--selected-false");
+        }
+            
+    }
 
     //подсчет очков
     scoreCount = (prevScore)=>{
-        let answerCount = 6;                        //максимальное количество попыток  
-        let clickCount = this.state.clickCount;     //количество попыток (сlick по вариантам ответов)
-        let finalScore = answerCount - clickCount;  //подсчет очков в зависимости от количества уже использованных попыток 6 = 0
-        if(answerCount === 0){                      
-            finalScore = 0;
-        }  
-        this.setState(()=>{
-            return ({score: prevScore + finalScore}) //запись в state полученных за правильный ответ очков
-        })
+            let answerCount = 6;                        //максимальное количество попыток  
+            let clickCount = this.state.clickCount;     //количество попыток (сlick по вариантам ответов)
+            let finalScore = answerCount - clickCount;  //подсчет очков в зависимости от количества уже использованных попыток 6 = 0
+            if(answerCount === 0){                      
+                finalScore = 0;
+            }  
+            this.setState(()=>{
+                return ({
+                    score: prevScore + finalScore      //запись в state полученных за правильный ответ очков
+                })
+            })    
     };
+
+
+    /******************************getters***********************************/
 
     //получить количество очков
     getScore = ()=>{
@@ -129,51 +127,50 @@ class Game extends React.Component{
        return categoryData;
     };
 
-    //создание описания птицы
-    createDescription=()=>{                         
-        let id = this.state.id;                     //получение названия выбранной пользователем птицы
-        let category = this.state.category;         //получение категории вопросов
-        let bird = dataBirds[category][id];         //доступ к данным птицы в выбранной категории
-        return bird;
+
+        //получение правильного ответа на вопрос
+    getCurrentBird(value){
+        let currentBird = value;
+        return currentBird
+    
     };
+
+    //получение названий птиц для списка ответов в компоненте Answers
+    getAnswersList() {
+        let category = this.state.category;                         //получение текущей категории вопросов
+        let answersList = dataBirds[category].map((value,index)=>{  //формирование списка названий птиц из текущей категории вопросов
+            return value.name
+        });
+        this.setState(()=>{
+            return({
+                answerList: answersList                          //запись списка в state
+            })
+                                          
+        })
+        return answersList;
+    };
+
+
+
+    /******************************setters***********************************/
 
      //функция устанавливает категорию вопросов
     setQuestionCategory =(categoryCount)=>{    
         switch(categoryCount) {
             case 1: 
-            this.setState(()=>{
-                return(
-                    {category: "Воробьиные"}
-                )
-            })
+            this.setCategoryName("Воробьиные")
             break
-            case 2: 
-            this.setState(()=>{
-                return(
-                    {category: "Лесные"}
-                )
-            })
+            case 2:
+            this.setCategoryName("Лесные") 
             break
             case 3: 
-            this.setState(()=>{
-                return(
-                    {category: "Певчие птицы"}
-                )
-            })
+            this.setCategoryName("Певчие птицы")
             break 
             case 4: 
-            this.setState(()=>{
-                return(
-                    {category: "Хищные птицы"}
-                )
-            })
+            this.setCategoryName("Хищные птицы")
             break 
-            case 5: 
-            this.setState(()=>{
-                return(
-                    {category: "Морские птицы"}
-                )
-            })
+            case 5:
+            this.setCategoryName("Морские птицы") 
             break
             default: 
             this.setState({category: "Разминка"});
@@ -181,17 +178,55 @@ class Game extends React.Component{
        
     };
 
-    handleClickToNextLevel = (e)=>{           //клик по кнопке next level вызывает функцию установки следующей категории вопросов и устанавливает значение false флага isrightanswer
-        this.setQuestionCategory(this.state.count);
-        this.createQuestion();
-        this.getAnswersList();
+    setCategoryName=(name)=>{
         this.setState(()=>{
             return(
-                {isRightAnswer : false}
+                {category: name}
             )
         });
     };
 
+    setRightAnswerStateFalse=()=>{
+        this.setState(()=>{
+            return({
+                isRightAnswer : false,
+                id: '',
+                clickCount: 0
+            })
+        });
+
+    }
+
+/************************************eventListeners***********************************/ 
+  
+    //обработка события click по варианту ответа
+    handleClick = (value)=>{
+        return new Promise((resolve, reject)=>{      
+            let selectedValue = value.target.value;     //значение input которое выбрал пользователь
+            let id = value.target.id;                   //id выбранного input
+            let click = this.state.clickCount;          //текущее значение количества кликов пользователя
+            this.setState(()=>{
+                return({
+                    answer: selectedValue,              //выбранное значение запивывается в state  как овтет пользователя
+                    clickCount: click + 1,              //количество кликов пользователя увеличивается на 1
+                    id: id
+                })
+            });
+            resolve(selectedValue);
+            }).then(()=>this.checkAnswer()).then(()=>this.changeInputColor());
+    };
+
+    handleClickToNextLevel = (e)=>{     //клик по кнопке next level вызывает функцию установки следующей категории вопросов и устанавливает значение false флага isrightanswer
+        console.log("hi");
+        return new Promise((resolve,reject)=>{
+            this.setQuestionCategory(this.state.count);
+            resolve();
+
+        }).then(()=>this.createQuestion()).then(()=>this.getAnswersList()).then(()=>this.setRightAnswerStateFalse())         
+        
+    };
+
+  
 
 
     render(){

@@ -10,3 +10,10 @@
     border-radius: 20px;
 }
 
+@media screen and (max-width: 1200px){
+    .questions-conteiner{
+        height: 150px;
+        margin-top: 10px;
+    }
+}
+

@@ -30,3 +30,41 @@
     font-size: 1.2rem;
 
 }
+
+@media screen and (max-width: 1200px){
+    .header{
+        height: 10%;
+        margin-bottom: 0;    
+    }
+    .logo{
+        width: 100px;
+        position: relative;
+        left: 10%;
+
+    }
+    .score-title, .score-count{
+        font-size: 1.5rem;
+    
+    }
+     
+
+}
+@media screen and (max-width: 800px){
+    .header{
+        height: 10%;    
+    }
+    .logo{
+        width: 100px;
+        position: relative;
+        left: 10%;
+
+    }
+    .score-title, .score-count{
+        font-size: 1.5rem;
+        position: relative;
+        left: 20%;
+    
+    }
+     
+}
+

@@ -22,8 +22,8 @@ class BirdInfo extends React.Component{
                 <div className="bird-info__image-and-sound">
                     <img className="bird_image bird_image--hidden" src={this.props.image} alt={this.props.name}/>
                     <div className="bird_audio-conteiner">
-                        <h3 className="audio_title-default">{this.state.isDescription === true? this.props.name: '******'}</h3>
-                        <p className="audio_subtitle--hidden">{this.props.name}</p>
+                        <h3 className="audio_title-default">{this.state.isDescription === true || this.props.isRightAnswer === true? this.props.name: '******'}</h3>
+                        <p className={this.state.isDescription === true || this.props.isRightAnswer === true ? "audio_subtitle": "audio_subtitle hidden"}>{this.props.species}</p>
                         <audio className="audio_sound" src={this.props.audio} controls></audio>
                     </div>
                 </div>

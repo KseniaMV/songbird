@@ -1,8 +1,8 @@
 .answer-list{
     width: 45%;
+    min-width: 300px;
     height: auto;
     text-align: left;
     border-radius: 10px;
     background-color: rgb(141, 139, 139);
-
 }
