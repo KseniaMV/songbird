@@ -45,7 +45,7 @@
     width: 10px;
     height: 10px;
     border-radius: 10px;
-    background-color: rgba(5, 199, 80, 0.6);
+    background-color: rgba(80,202,193,0.8);
     position: absolute;
     top: calc(50% - 5px);
     left: -20px;
@@ -58,7 +58,7 @@
     width: 10px;
     height: 10px;
     border-radius: 10px;
-    background-color: rgba(219, 4, 94, 0.6);
+    background-color: rgba(266,11,29,0.8);
     position: absolute;
     top: calc(50% - 5px);
     left: -20px;

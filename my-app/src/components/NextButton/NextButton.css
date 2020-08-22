@@ -5,12 +5,22 @@
     border-radius: 15px;
     font-size: 1rem;
     font-weight: bold;
-    text-transform: uppercase;   
+    text-transform: uppercase;  
+    border: none;
+    filter: drop-shadow(10px 10px 4px rgba(118, 107, 173, 0.5)); 
+    cursor: pointer;
 }
 .button--active{
-    background-color: rgba(19, 196, 209, 0.8);
+    background-color: rgba(255, 92, 26, 0.8);
 
 }
 .button--default{
     background-color: rgb(255, 255, 255);
+}
+
+
+@media screen and (max-width:480px){
+    .button_next-level{
+        width: 95%
+    }
 }

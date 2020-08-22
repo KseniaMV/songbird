@@ -1,7 +1,7 @@
 import React from 'react';
 import './Questions.css';
 import BirdInfo from './BirdInfo.js';
-import defaultImage from '../../images/images.png';
+import defaultImage from '../../images/defaultImage.png';
 
 class Questions extends React.Component{
     constructor(props){

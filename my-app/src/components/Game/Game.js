@@ -65,18 +65,18 @@ class Game extends React.Component{
 
     //функция сравнения ответа с вопросом
     checkAnswer = ()=>{
-        let answer = this.state.answer;             //получение навзания птицы, который выбрал пользователь
-        let prevScore = this.state.score;           //получение количества очков пользователя
-        let currentBird = this.state.currentBird;   //название птицы, которую "загадала" игра 
-        if(answer === currentBird && this.state.isRightAnswer === false){//сравнение варианта ответа и загаданной птицы
+        let answer = this.state.answer;                                     //получение навзания птицы, который выбрал пользователь
+        let prevScore = this.state.score;                                   //получение количества очков пользователя
+        let currentBird = this.state.currentBird;                           //название птицы, которую "загадала" игра 
+        if(answer === currentBird && this.state.isRightAnswer === false){   //сравнение варианта ответа и загаданной птицы
             let labelId = this.state.id;
-            let label = document.querySelector("#"+"bird" + labelId);
+            let label = document.querySelector("#bird" + labelId);
                 label.classList.remove("answers-item_label");
                 label.classList.add("answers-item_label--selected-true");
-            this.scoreCount(prevScore);             //если названия равны, то вызывается функция подсчета очков, куда передается текущее количество очков пользователя    
+            this.scoreCount(prevScore);                                      //если названия равны, то вызывается функция подсчета очков, куда передается текущее количество очков пользователя    
             this.setState((state)=>{
                 return({
-                    isRightAnswer: true,            //флаг = ответ правильный
+                    isRightAnswer: true,                                     //флаг = ответ правильный
                     count: state.count + 1, 
                 })      
             });

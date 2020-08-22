@@ -41,16 +41,53 @@
     font-size: 1.4 rem;
     text-align: left;
     font-weight: lighter;
-    color: rgba(255, 255, 255,.5);
-    border-bottom: 1px solid rgba(255, 255, 255,.5); 
-    /*display: none; */ 
+    color: rgba(19, 5, 2, 0.9);
+    border-bottom: 1px solid rgba(23, 107, 131, 0.9); 
 }
 .audio_sound{
     width: 100%;
     margin: auto;
     border-radius: 10px;
 }
+.audio_sound::-webkit-media-controls-panel{
+    background-color: rgba(174, 88, 125, 0.3);
+}
+.audio_sound::-webkit-media-controls-mute-button{
+    background-image: url('../../images/sound.png');
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.audio_sound::-webkit-media-controls-enclosure{
+    border-radius: 15px;
+}
+.audio_sound::-webkit-media-controls-time-remaining-display, .audio_sound::-webkit-media-controls-current-time-display{
+    font-size: 1rem;
+    color: rgb(118, 107, 173);
+}
+.audio_sound::-webkit-media-controls-play-button{
+    background-image: url('../../images/play.png');
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.audio_sound::-webkit-media-controls-timeline-{
+    background-color: red;
+    
+}
+.audio_sound::-webkit-media-controls-volume-slider{
+    background-color: red;
+    
+}
+.audio_sound::-webkit-media-controls-timeline::-internal-media-controls-segmented-track{
+    background: -internal-light-dark(red, rgba(255, 255, 255, 0.2));
+}
+input[pseudo="-internal-media-controls-overflow-button"]{
+    background-color: sandybrown;
+}
 
+   
 .bird_description{
     width: 90%;
     height: auto;
@@ -66,8 +103,8 @@
     font-size: 1.4 rem;
     text-align: left;
     font-weight: lighter;
-    color: rgba(255, 255, 255,.5);
-    border-bottom: 1px solid rgba(255, 255, 255,.5);
+    color: rgba(19, 5, 2, 0.9);
+    border-bottom: 1px solid rgba(23, 107, 131, 0.9); 
    
 }
 .hidden{
@@ -75,3 +112,23 @@
 }
 
 
+@media screen and (max-width:480px){
+    .audio_title-default{
+        height: auto;
+        margin-bottom: 5px;
+        font-size: 1.2 rem;
+        
+    }
+    .audio_subtitle{
+        height: auto;
+        margin: 0;
+        padding-bottom:  0;
+        font-size: 1.2 rem; 
+    }
+    .audio_sound{
+        width: 100%;
+        margin: 5px auto;
+        border-radius: 10px;
+    }
+    
+}

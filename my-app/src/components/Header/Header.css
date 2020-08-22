@@ -6,13 +6,16 @@
     flex-direction: row;
     justify-content:center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: drop-shadow(10px 10px 4px rgba(23, 107, 131, 0.3));
     border-radius: 10px;
      
 }
 .logo{
-    width: 200px;
+    width: 150px;
     height: auto;
+    position: relative;
+    left: 5%;
 }
 .score-conteiner{
     width: calc(100% - 200px);
@@ -37,7 +40,7 @@
         margin-bottom: 0;    
     }
     .logo{
-        width: 100px;
+        width: 50px;
         position: relative;
         left: 10%;
 
@@ -55,8 +58,7 @@
     }
     .logo{
         width: 100px;
-        position: relative;
-        left: 10%;
+
 
     }
     .score-title, .score-count{
@@ -66,5 +68,11 @@
     
     }
      
+}
+
+@media screen and (max-width:480px){
+    .header{
+        width: 95%;
+    }
 }
 

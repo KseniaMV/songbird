@@ -2,12 +2,25 @@
   width: 100vw;
   height: 100vh;
   margin: auto;
-  background-color: rgba(8, 7, 7, 0.9);
+  background-image: url('../src/images/bird-4104506_1920.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+@media screen and (max-width: 800px){
+  .app{
+    height: auto;
+
+  }
+ 
+
 }
 
