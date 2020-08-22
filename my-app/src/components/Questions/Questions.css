@@ -1,0 +1,28 @@
+.questions-conteiner{
+    width: 80%;
+    height: 20%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(162, 186, 36, 0.5);
+    border-radius: 20px;
+    filter: drop-shadow(10px 10px 4px rgba(23, 107, 131, 0.3));
+}
+
+@media screen and (max-width: 1200px){
+    .questions-conteiner{
+        height: 150px;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+
+
+
+@media screen and (max-width:480px){
+    .questions-conteiner{
+        width: 95%;
+    }
+}
