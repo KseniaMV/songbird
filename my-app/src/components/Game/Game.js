@@ -119,7 +119,10 @@ class Game extends React.Component{
                     gameOver: true
                 })
             });
-            this.props.checkGameState('true', this.state.score);
+            setTimeout(() => {
+                this.props.checkGameState(this.state.gameOver, this.state.score);   
+            }, 3000);
+            
         }
     }
 

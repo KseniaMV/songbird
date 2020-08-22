@@ -3,7 +3,7 @@
     height: 30%;
     margin: 80px auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(255,255,255,0.4);

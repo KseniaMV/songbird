@@ -12,6 +12,12 @@ class GameResults extends React.Component{
             
         }
     }
+    greeting = ()=>{
+        console.log("greeting");
+    }
+    startGameAgain = () =>{
+        console.log("again");
+    }
     render(){
         let score = this.props.score;
         if(score === 30){
@@ -25,11 +31,10 @@ class GameResults extends React.Component{
         if(this.state.victory === true){
             button = <button className="victoryButton" onClick={this.greeting()}>Ура!</button>
         }else{
-            button = <button className="startGameAgain" onclick={this.startGameAgain()}>Играть заного</button>
+            button = <button className="startGameAgain" onClick={this.startGameAgain()}>Играть заного</button>
         }
         return(
             <>
-            <Header/>
             <div className="resultsConteiner">
                 <h1 className="greeting">{this.state.victory===true? 'Поздравляем!': null}</h1>
                 <div className="results">{this.state.victory===true?'Вы набрали максимальное количество баллов! ' + this.props.score: 'Вы набрали' +  this.props.score + 'баллов из 30'}</div>
