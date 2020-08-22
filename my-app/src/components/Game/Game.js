@@ -20,7 +20,8 @@ class Game extends React.Component{
             score: 0,
             bird: {},
             answerList: [],
-            clickCount: 0
+            clickCount: 0,
+            gameOver: false
         }
      }
 
@@ -108,6 +109,19 @@ class Game extends React.Component{
                 })
             })    
     };
+
+    //функция завершения игры (проверяет категорию и устанавливает флаг завершения игры)
+    checkGameResult = () =>{
+        let category = this.getCategoryData();
+        if(category.name === "Морские птицы" && this.state.isRightAnswer === true){
+            this.setState(()=>{
+                return({
+                    gameOver: true
+                })
+            });
+            this.props.checkGameState('true', this.state.score);
+        }
+    }
 
 
     /******************************getters***********************************/
@@ -213,11 +227,10 @@ class Game extends React.Component{
                 })
             });
             resolve(selectedValue);
-            }).then(()=>this.checkAnswer()).then(()=>this.changeInputColor());
+            }).then(()=>this.checkAnswer()).then(()=>this.changeInputColor()).then(()=>this.checkGameResult());
     };
 
     handleClickToNextLevel = (e)=>{     //клик по кнопке next level вызывает функцию установки следующей категории вопросов и устанавливает значение false флага isrightanswer
-        console.log("hi");
         return new Promise((resolve,reject)=>{
             this.setQuestionCategory(this.state.count);
             resolve();
