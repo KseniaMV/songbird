@@ -5,8 +5,6 @@ import AnswersItem from './AnswersItem';
 class AnswerList extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-        }
     }
    
  
