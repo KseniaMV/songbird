@@ -84,6 +84,8 @@ class Game extends React.Component{
                     count: state.count + 1, 
                 })      
             });
+            let audio = document.querySelector('.audio_sound');
+            audio.pause();
         }
 
     };
