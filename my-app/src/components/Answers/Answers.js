@@ -2,13 +2,10 @@ import React from 'react';
 import './Answers.css';
 import Description from './Description.js';
 import AnswerList from './AnswerList.js';
-import birdsData from '../../birdsData.json';
 
 class Answers extends React.Component{
     constructor(props){
        super(props);
-       this.state = {
-       }
     }
     render(){
         return (

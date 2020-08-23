@@ -1,0 +1,56 @@
+.resultsConteiner{
+    width: 60%;
+    height: auto;
+    margin: 80px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.7);
+    filter: drop-shadow(10px 10px 4px rgba(23, 107, 131, 0.3));
+
+}
+
+.greeting, .results, .greeting_text{
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(118, 107, 173);
+    text-align: center;
+
+}
+
+.greeting_text{
+    color: rgb(80, 202, 163);
+}
+
+.victoryButton, .startGameAgain{
+    width: 300px;
+    height: 60px;
+    margin: 50px auto;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(19, 5, 2);
+    filter: drop-shadow(10px 10px 4px rgba(23, 107, 131, 0.3));
+}
+.victoryButton{
+    background-color: rgba(23, 107, 131, 0.7);
+}
+.startGameAgain{
+    background-color: rgba(255, 224, 37, 0.7);
+}
+
+@media screen and (max-width:480px){
+    .victoryButton, .startGameAgain{
+        width: 200px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+}

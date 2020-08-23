@@ -3,7 +3,6 @@ import './AnswersItem.css';
 
 class AnswersItem extends React.Component{
     render(){
-        let rightAnswerState = this.props.isRightAnswer;
         return (
             <>
             <div className="answers-item">
