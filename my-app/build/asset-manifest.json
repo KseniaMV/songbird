@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0b650b77.chunk.css",
+    "main.js": "/static/js/main.aabd1690.chunk.js",
+    "main.js.map": "/static/js/main.aabd1690.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
+    "static/js/2.36d2ef2e.chunk.js": "/static/js/2.36d2ef2e.chunk.js",
+    "static/js/2.36d2ef2e.chunk.js.map": "/static/js/2.36d2ef2e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.50f772bad516ef3ac870ef7ef53b132b.js": "/precache-manifest.50f772bad516ef3ac870ef7ef53b132b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.0b650b77.chunk.css.map": "/static/css/main.0b650b77.chunk.css.map",
+    "static/js/2.36d2ef2e.chunk.js.LICENSE.txt": "/static/js/2.36d2ef2e.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/bird-4104506_1920.84e18143.jpg",
+    "static/media/defaultImage.png": "/static/media/defaultImage.17e03819.png",
+    "static/media/win.mp3": "/static/media/win.938be6ed.mp3",
+    "static/media/wrong.mp3": "/static/media/wrong.ca15d0d9.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c3e0c4.js",
+    "static/js/2.36d2ef2e.chunk.js",
+    "static/css/main.0b650b77.chunk.css",
+    "static/js/main.aabd1690.chunk.js"
+  ]
+}
