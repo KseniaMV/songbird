@@ -72,22 +72,15 @@
     background-repeat: no-repeat;
     
 }
+.audio_sound::hover -webkit-media-controls-play-button{
+    background-image: url('../../images/pause.png');
+   
+}
 .audio_sound::-webkit-media-controls-timeline-{
     background-color: red;
     
 }
-.audio_sound::-webkit-media-controls-volume-slider{
-    background-color: red;
-    
-}
-.audio_sound::-webkit-media-controls-timeline::-internal-media-controls-segmented-track{
-    background: -internal-light-dark(red, rgba(255, 255, 255, 0.2));
-}
-input[pseudo="-internal-media-controls-overflow-button"]{
-    background-color: sandybrown;
-}
-
-   
+ 
 .bird_description{
     width: 90%;
     height: auto;

@@ -5,6 +5,8 @@ import Questions from '../Questions/Questions.js';
 import Answers from '../Answers/Answers.js';
 import birdsData from '../../birdsData.json';
 import NextButton from '../NextButton/NextButton.js';
+import win from '../../sounds/win.mp3';
+import wrong from '../../sounds/wrong.mp3';
 
 const dataBirds = birdsData;
 class Game extends React.Component{
@@ -69,7 +71,8 @@ class Game extends React.Component{
         let answer = this.state.answer;                                     //получение навзания птицы, который выбрал пользователь
         let prevScore = this.state.score;                                   //получение количества очков пользователя
         let currentBird = this.state.currentBird;                           //название птицы, которую "загадала" игра 
-        if(answer === currentBird && this.state.isRightAnswer === false){   //сравнение варианта ответа и загаданной птицы
+        if(answer === currentBird && this.state.isRightAnswer === false){
+            this.winSound();   //сравнение варианта ответа и загаданной птицы
             let labelId = this.state.id;
             let label = document.querySelector("#bird" + labelId);
                 label.classList.remove("answers-item_label");
@@ -91,6 +94,7 @@ class Game extends React.Component{
         if(!label.classList.contains("answers-item_label--selected-true")){
             label.classList.remove("answers-item_label");
             label.classList.add("answers-item_label--selected-false");
+            this.wrongSound();
         }
             
     }
@@ -121,9 +125,16 @@ class Game extends React.Component{
             });
             setTimeout(() => {
                 this.props.checkGameState(this.state.gameOver, this.state.score);   
-            }, 3000);
+            }, 1500);
             
         }
+    }
+    winSound = () =>{
+        new Audio(win).play();
+    }
+
+    wrongSound = () =>{
+        new Audio(wrong).play();
     }
 
 

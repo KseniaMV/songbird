@@ -21,11 +21,19 @@ class App extends React.Component{
         })
       })
     }
+  };
+  startGameAgain = () =>{
+    this.setState(()=>{
+      return({
+        isGameOver: false
+      })
+    })
+
   }
 
   render(){
     return (
-      <div className="app">{this.state.isGameOver === true? <GameResults score={this.state.score}/>:<Game checkGameState={this.checkGameState}/>}</div>
+      <div className="app">{this.state.isGameOver === true? <GameResults score={this.state.score} startGameAgain={this.startGameAgain}/>:<Game checkGameState={this.checkGameState}/>}</div>
     );
   }
 }
