@@ -1,6 +1,6 @@
 import React from 'react';
 import './GameResults.css';
-import Header from '../Header/Header.js';
+
 
 
 

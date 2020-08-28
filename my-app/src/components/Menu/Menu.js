@@ -2,9 +2,6 @@ import React from 'react';
 import './Menu.css';
 
 class Menu extends React.Component{
-   constructor(props) {
-        super(props);  
-    }
 
     render() {
         let categoryData = this.props.categoryData();

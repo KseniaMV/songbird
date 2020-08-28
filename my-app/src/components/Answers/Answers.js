@@ -4,9 +4,7 @@ import Description from './Description.js';
 import AnswerList from './AnswerList.js';
 
 class Answers extends React.Component{
-    constructor(props){
-       super(props);
-    }
+
     render(){
         return (
             <div className="answers-conteiner">

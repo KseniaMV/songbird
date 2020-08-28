@@ -3,11 +3,7 @@ import './AnswerList.css';
 import AnswersItem from './AnswersItem';
 
 class AnswerList extends React.Component{
-    constructor(props){
-        super(props);
-    }
-   
- 
+
     render(){
         let listOfNames = this.props.listOfNames;
         let array = listOfNames.map((name, index) => {

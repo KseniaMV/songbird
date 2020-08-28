@@ -53,6 +53,7 @@ class Game extends React.Component{
             )                                     //запись в state загаданной птицы и ее данных
             
         })
+        console.log("правильный ответ: " + currentBirdData.name);
         return currentBirdData;
     };
         
@@ -72,7 +73,7 @@ class Game extends React.Component{
         let prevScore = this.state.score;                                   //получение количества очков пользователя
         let currentBird = this.state.currentBird;                           //название птицы, которую "загадала" игра 
         if(answer === currentBird && this.state.isRightAnswer === false){
-            this.winSound();   //сравнение варианта ответа и загаданной птицы
+            this.winSound();                                                //сравнение варианта ответа и загаданной птицы
             let labelId = this.state.id;
             let label = document.querySelector("#bird" + labelId);
                 label.classList.remove("answers-item_label");
@@ -92,8 +93,8 @@ class Game extends React.Component{
 
     changeInputColor = ()=>{
         let labelId = this.state.id;
-        let label = document.querySelector("#"+"bird" + labelId);
-        if(!label.classList.contains("answers-item_label--selected-true")){
+        let label = document.querySelector("#bird" + labelId);
+        if(!label.classList.contains("answers-item_label--selected-true") && this.state.isRightAnswer !== true){
             label.classList.remove("answers-item_label");
             label.classList.add("answers-item_label--selected-false");
             this.wrongSound();
