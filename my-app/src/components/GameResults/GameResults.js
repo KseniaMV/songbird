@@ -11,8 +11,7 @@ class GameResults extends React.Component{
             victory: false   
         }
     };
-  
-    render(){
+    componentDidMount(){
         let score = this.props.score;
         if(score === 30){
             this.setState(()=>{
@@ -22,6 +21,9 @@ class GameResults extends React.Component{
             })
         };
 
+    }
+  
+    render(){
         let button;
         if(this.state.victory === true){
             button = <button className="victoryButton" onClick={this.props.startGameAgain}>Ура!</button>

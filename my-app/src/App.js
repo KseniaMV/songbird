@@ -12,7 +12,6 @@ class App extends React.Component{
     }
   }
   checkGameState = (value, score)=>{
-    console.log("iam here");
     if(value === true){
       this.setState(()=>{
         return({
