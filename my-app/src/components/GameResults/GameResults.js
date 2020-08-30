@@ -28,7 +28,7 @@ class GameResults extends React.Component{
         if(this.state.victory === true){
             button = <button className="victoryButton" onClick={this.props.startGameAgain}>Ура!</button>
         }else{
-            button = <button className="startGameAgain" onClick={this.props.startGameAgain}>Играть заного</button>
+            button = <button className="startGameAgain" onClick={this.props.startGameAgain}>Играть заново</button>
         };
         return(
             <>
