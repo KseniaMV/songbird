@@ -1,7 +1,7 @@
 .button_next-level{
     width: 80%;
     height: 50px;
-    margin: 10px auto;
+    margin: 5px auto;
     border-radius: 15px;
     font-size: 1rem;
     font-weight: bold;
@@ -19,8 +19,14 @@
 }
 
 
+@media screen and (max-width:1100px){
+    .button_next-level{
+        width: 80%;
+        height: 40px;
+    }
+}
 @media screen and (max-width:480px){
     .button_next-level{
-        width: 95%
+        width: 95%;
     }
 }

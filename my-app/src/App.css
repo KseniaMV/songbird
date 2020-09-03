@@ -14,13 +14,11 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1200px){
   .app{
     height: auto;
-
+    min-height: 100vh;
   }
- 
 
 }
 
