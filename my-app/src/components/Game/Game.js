@@ -104,6 +104,7 @@ class Game extends React.Component{
 
     //подсчет очков
     scoreCount = (prevScore)=>{
+        if(this.state.isRightAnswer === false){
             let answerCount = 6;                        //максимальное количество попыток  
             let clickCount = this.state.clickCount;     //количество попыток (сlick по вариантам ответов)
             let finalScore = answerCount - clickCount;  //подсчет очков в зависимости от количества уже использованных попыток 6 = 0
@@ -114,7 +115,8 @@ class Game extends React.Component{
                 return ({
                     score: prevScore + finalScore      //запись в state полученных за правильный ответ очков
                 })
-            })    
+            })
+        }         
     };
 
     //функция завершения игры (проверяет категорию и устанавливает флаг завершения игры)
